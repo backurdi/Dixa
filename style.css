@@ -1,0 +1,1140 @@
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ----------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ----------------------------------------------- */
+
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.box {
+    padding: 1%;
+}
+
+/* ----- HEADINGS ----- */
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #191919;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 5px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+
+/* ----- ICONS ----- */
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/* ----- LINKS ----- */
+
+a:link,
+a:visited {
+    color: ##191919;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ----- BUTTONS ----- */
+
+.btn{
+    display: inline-block;
+    text-align: center;
+    padding-top: 5.5%;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full{
+    background-color: #5A43E0;
+    border: 1px solid #5A43E0;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost{
+    border: 1px solid #5A43E0;
+    color: #5A43E0;
+}
+
+.btn:hover,
+.btn:active{
+    background-color: #5A43E0;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    background-color: #4B38BE;
+    color: #fff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #5A43E0;
+    color: #fff;
+}
+
+/* ----------------------------------------------- */
+/* Nav */
+/* ----------------------------------------------- */
+
+
+nav{
+    display: grid;
+    grid-template-columns: 20% 14% 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "logo ... liste"
+    "logo ... ...";
+}
+
+nav img{
+    width: 100%;
+    grid-area: logo;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-area: liste;
+}
+
+nav li{
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 0.9em;
+}
+
+.try-nav{
+    padding: 10px;
+    margin-top: -7px;
+}
+
+.fas{
+    display: none;
+}
+
+/* ----------------------------------------------- */
+/* header */
+/* ----------------------------------------------- */
+
+header{
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 50px 1fr 1fr;
+    grid-template-rows: repeat(7, 90px);
+    grid-template-areas: 
+    "lille ... ... hero hero"
+    "headline headline ... hero hero"
+    "tekst tekst ... hero hero"
+    "... ... ... hero hero"
+    "knap1 knap2 ... hero hero"
+    "... ... ... hero hero"
+}
+
+header p{
+    grid-area: lille;
+    padding-top: 70px;
+}
+
+.headline{
+    grid-area: headline;
+    font-weight: 400;
+}
+
+.solved{
+    margin-top: -50px;
+    color: #5A43E0;
+    grid-area: solved;
+}
+
+header h4{
+    padding-top: 50px;
+    grid-area: tekst;
+}
+
+.try{
+    width: 80%;
+    height: 70%;
+    grid-area: knap1;
+}
+
+.book{
+    width: 80%;
+    height: 70%;
+    grid-area: knap2;
+}
+
+header img{
+    margin-top: -30px;
+    width: 110%;
+    grid-area: hero;
+    z-index: 1;
+}
+
+/* ----------------------------------------------- */
+/* virksomheder */
+/* ----------------------------------------------- */
+
+.virksomheder-section{
+    position: relative;
+    height: 500px;
+}
+
+.baggrund{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #B298FF;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skewY(-4deg);
+    transform-origin: top left;
+}
+
+.overskrift{
+    position: relative;
+    color: white;
+    margin-left: 30px;
+    font-weight: 400;
+    color: #fff;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.virksomheder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 0 200px;
+}
+
+.virksomheder h1{
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    border: 1px solid #fff;
+
+}
+
+/* ----------------------------------------------- */
+/* info */
+/* ----------------------------------------------- */
+
+.info{
+    background-color: #DBD5E8;
+    display: grid;
+    margin-top: -7%;
+    padding:7% 10px 20px 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.indhold1{
+    display: grid;
+    grid-template-rows: 20% 50px 50px 30px;
+    align-items: center;
+    justify-items: center; 
+}
+
+.indhold2{
+    display: grid;
+    grid-template-rows: 20% 50px 50px 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.indhold3{
+    display: grid;
+    grid-template-rows: 20% 50px 50px 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+.indhold1 img,
+.indhold2 img,
+.indhold3 img{
+    width: 80%;
+}
+
+.indhold1 h3,
+.indhold2 h3,
+.indhold3 h3{
+    text-align: center;
+    font-size: 1.3em;
+    padding-top: 10px;
+    font-weight: 400;
+}
+
+.indhold1 p,
+.indhold2 p,
+.indhold3 p{
+    text-align: center;
+    font-size: 1em
+}
+
+/* ----------------------------------------------- */
+/* Produkt */
+/* ----------------------------------------------- */
+
+.produkt{
+    background: url("img/streger.png");
+    background-size: cover;
+
+}
+
+.produktet{
+    padding: 20px 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 10% 10% 1fr 110px 110px;
+    grid-template-areas: 
+        "overskrift overskrift img img img"
+        "overskrift overskrift img img img"
+        "tekst tekst img img img"
+        "indhold indhold img img img"
+        "... plant img img img "
+        "... plant ... ... ..."
+}
+
+.produktet h1{
+    grid-area: overskrift;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.produktet p{
+    font-size: 0.9em;
+    grid-area: tekst;
+    margin-bottom: 15px;
+}
+
+.text{
+    grid-area: indhold;
+}
+
+.text div p{
+    font-size: 0.7em;
+}
+
+.text div h3{
+    font-weight: 400;
+}
+
+.text div{
+    margin-bottom: 40px;
+}
+
+.img-container1{
+    background-image: url("img/blå-c.png");
+    background-size: 90% 85%;
+    background-repeat: no-repeat;
+    grid-area: img;
+    padding-top: 40px;
+}
+
+.img-container1 img{
+    float: right;
+    width: 85%;
+}
+
+.kaffe{
+    grid-area: plant;
+    justify-self:left;
+    width: 100%;
+}
+
+/* ----------------------------------------------- */
+/* prioritet */
+/* ----------------------------------------------- */
+
+
+.prioritet{
+    padding: 150px 50px 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 10% 10% 1fr 110px 120px 110px;
+    grid-template-areas: 
+        "img img img overskrift overskrift"
+        "img img img overskrift overskrift"
+        "img img img tekst tekst"
+        "img img img indhold indhold"
+        "img img img ... ... "
+        "img img img plant ..."
+        "... ... ... plant ..."
+}
+
+.prioritet h1{
+    grid-area: overskrift;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.prioritet p{
+    font-size: 0.9em;
+    grid-area: tekst;
+    margin-bottom: 15px;
+}
+
+.text{
+    grid-area: indhold;
+}
+
+.text div p{
+    font-size: 0.7em;
+}
+
+.text div h3{
+    font-weight: 400;
+}
+
+.text div{
+    margin-bottom: 40px;
+}
+
+.img-container2{
+    background-image: url("img/pink-c.png");
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+    grid-area: img;
+    padding-top: 130px;
+}
+
+.img-container2 img{
+    padding-left: 50px;
+    width: 85%;
+}
+
+.plant{
+    grid-area: plant;
+    justify-self:left;
+    width: 100%;
+}
+
+/* ----------------------------------------------- */
+/* integration */
+/* ----------------------------------------------- */
+
+
+.integration{
+    padding: 150px 50px 20px 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 10% 10% 1fr 110px 120px;
+    grid-template-areas: 
+        "overskrift overskrift img img img"
+        "overskrift overskrift img img img"
+        "tekst tekst img img img"
+        "indhold indhold img img img"
+        "... ... img img img"
+        "... ... img img img"
+}
+
+.integration h1{
+    grid-area: overskrift;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.integration p{
+    font-size: 0.9em;
+    grid-area: tekst;
+    margin-bottom: 15px;
+}
+
+.text{
+    grid-area: indhold;
+    width: 90%;
+}
+
+.text div p{
+    font-size: 0.7em;
+}
+
+.text div h3{
+    font-weight: 400;
+}
+
+.text div{
+    margin-bottom: 40px;
+}
+
+.img-container3{
+    background-image: url("img/lilla-c.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    grid-area: img;
+}
+
+.img-container3 img{
+    padding-left: 50px;
+    width: 85%;
+}
+
+/* ----------------------------------------------- */
+/* lær mere */
+/* ----------------------------------------------- */
+
+.lær{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 40px;
+    justify-items:center;
+    grid-template-areas:
+        "img img"
+        "headline headline"
+        "lær book"
+    ;
+
+}
+
+.lær img{
+    grid-area: img;
+    width: 40%;
+}
+
+.lær h1{
+    grid-area: headline;
+    font-size: 1.5em;
+}
+
+.btn-lær{
+    grid-area: lær;
+    width: 50%;
+    justify-self:right;
+    padding-top: 2%;
+    font-size: 1.5em;
+}
+
+.btn-book{
+    grid-area: book;
+    width: 50%;
+    justify-self:left;
+    padding-top: 2%;
+    font-size: 1.5em;
+}
+
+/* ----------------------------------------------- */
+/* footer*/
+/* ----------------------------------------------- */
+
+footer{
+    background-color: #E1E5F7;
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    padding:40px 20px 0px 20px;
+}
+
+.top{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items:center;
+    margin-bottom:20px;
+}
+
+.top img{
+    width: 25%;
+}
+
+.top a{
+    margin-bottom: 15px;
+}
+.social ul{
+    list-style: none;
+}
+
+.social ul li{
+    margin-bottom: 10px;
+}
+
+.social i{
+    color: #5A43E0;
+}
+
+.f-produkt ul{
+    list-style: none;
+}
+
+.f-produkt ul li{
+    margin-bottom: 10px;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+.sign-up [type=text]{
+    margin-top: 15px;
+    width: 60%;
+    padding: 15px;
+}
+
+button[type=submit]{
+    padding: 15px;
+    color: #fff;
+    background-color: #5A43E0;
+}
+
+.bund{
+    display: grid;
+    justify-items:center;
+}
+
+.bund{
+    border-top: 2px solid #fff;
+    width: 100%
+}
+
+.ekstra ul{
+    list-style: none;
+}
+
+.ekstra ul li{
+    float: left;
+    margin-right: 40px;
+}
+
+
+/* ----------------------------------------------- */
+/* queries*/
+/* ----------------------------------------------- */
+
+@media only screen and (max-width: 1200px){
+    .img-container1,
+    .img-container2,
+    .img-container3{
+        background-size: 90% 80%;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .img-container1,
+    .img-container2,
+    .img-container3{
+        background-size: 90% 70%;
+    }
+}
+
+@media only screen and (max-width: 1050px){
+     header p{
+        font-size: 0.8em;
+        padding-top: 50px;
+    }   
+    
+
+    nav li{
+        font-size: 0.7em;
+    }
+
+    .overskrift{
+        font-size: 1.5em;
+    }
+    
+    .virksomheder{
+        padding:0 100px;
+    }
+    .virksomheder h1{
+        font-size: 1.5em;
+    }
+
+    .indhold1 h3,
+    .indhold2 h3,
+    .indhold3 h3{
+        font-size: 1em;
+    }
+    
+    .indhold1 p,
+    .indhold2 p,
+    .indhold3 p{
+        font-size: 0.8em;
+    }
+    
+    .produktet{
+        padding: 20px 50px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 10% 10% 10% 1fr 110px;
+        grid-template-areas: 
+            "overskrift overskrift img img"
+            "overskrift overskrift img img"
+            "tekst tekst img img"
+            "indhold indhold img img"
+            "... ... ... plant"
+    }
+
+    .kaffe{
+        margin-top: -90px;
+        width: 80%;
+    }
+
+    .prioritet{
+        padding: 20px 50px 20px 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 10% 10% 10% 1fr 110px 120px;
+        grid-column-gap: 20px;
+        grid-template-areas: 
+            "img img overskrift overskrift"
+            "img img overskrift overskrift"
+            "img img tekst tekst"
+            "img img indhold indhold"
+            "img img plant ... "
+            "img img plant ..."
+    }
+
+    .integration{
+        padding: 30px 50px 20px 50px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 10% 10% 10% 1fr 110px;
+        grid-template-areas: 
+            "overskrift overskrift img img"
+            "overskrift overskrift img img"
+            "tekst tekst img img"
+            "indhold indhold img img"
+            "... ... img img"
+    }
+
+    .produktet h1,
+    .prioritet h1,
+    .integration h1{
+        font-size: 1.2em;
+    }
+
+    .produktet p,
+    .prioritet p,
+    .integration p{
+        font-size: 0.7em;
+    }
+
+    .text div h3{
+        font-size: 0.9em;
+    }
+
+    .text div p{
+        font-size: 0.7em;
+    }
+
+    .text div a{
+        font-size: 0.7em;
+    }
+
+    .text div{
+        margin-bottom: 15px;
+    }
+
+    .img-container1,
+    .img-container2,
+    .img-container3{
+        background-size: 100% 65%;
+    }
+
+    .img-container1 img,
+    .img-container2 img,
+    .img-container3 img{
+        width: 100%;
+    }
+
+    .btn-lær{
+        font-size: 1em;
+    }
+
+    .btn-book{
+        font-size: 1em;
+    }
+
+    .f-produkt h3{
+        font-size: 1em; 
+    }
+
+    .top div a{
+        font-size: 0.8em;
+    }
+
+    .bund a{
+        font-size: 0.8em;
+    }
+
+    .bund p{
+        font-size: 0.8em;
+    }
+
+}
+
+@media only screen and (max-width: 850px){
+    
+    header{
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 50px 1fr 1fr;
+        grid-template-rows: repeat(6, 80px);
+        grid-template-areas: 
+        "lille ... ... hero hero"
+        "headline headline ... hero hero"
+        "tekst tekst ... hero hero"
+        "... ... ... hero hero"
+        "knap1 knap2 ... hero hero"
+    }
+
+    header p{
+        font-size: 0.7em;
+    }
+
+    .headline{
+        font-size: 2em;
+    }
+
+    header h4{
+        padding-top: 40px;
+        font-size: 0.8em;
+    }
+
+    .try{
+        width: 90%;
+        height: 60%;
+    }
+
+    .book{
+        width: 90%;
+        height: 60%;
+    }
+
+    .top{
+        justify-items:left;
+    }
+}
+@media only screen and (max-width: 720px){
+    header{
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 150px 1fr repeat(3, 100px);
+        justify-items:center;
+        grid-template-areas: 
+        "lille"
+        "headline"
+        "hero"
+        "tekst"
+        "knap1"
+        "knap2"
+    }
+    .headline{
+        font-size: 1.8em;
+    }
+
+    .try{
+        padding-top: 20px;
+        width: 60%;
+    }
+
+    .book{
+        padding-top: 20px;
+        width: 60%;
+    }
+
+    nav li{
+        display: none;
+    }
+
+    .fas{
+        display: block;
+        grid-column-start: 6;
+        justify-self:center;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .virksomheder{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 0 100px;
+    }
+
+    .info{
+        background-color: #DBD5E8;
+        display: grid;
+        margin-top: -7%;
+        padding:7% 10px 20px 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .produktet{
+        padding: 20px 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 10% 1fr 110px;
+        justify-items:center;
+        grid-template-areas: 
+            "overskrift"
+            "tekst"
+            "indhold"
+            "img"
+    }
+
+    .kaffe{
+        display: none;
+    }
+
+    .prioritet{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 10% 1fr 110px 120px;
+        grid-column-gap: 20px;
+        justify-items:center;
+        grid-template-areas: 
+            "overskrift"
+            "tekst"
+            "indhold"
+            "img"
+    }
+
+    .plant{
+        display: none;
+    }
+
+    .integration{
+        padding: 30px 50px 20px 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 10% 1fr 110px;
+        grid-template-areas: 
+            "overskrift"
+            "tekst"
+            "indhold"
+            "img"
+    }
+
+    .produktet h1,
+    .prioritet h1,
+    .integration h1{
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .produktet p,
+    .prioritet p,
+    .integration p{
+        text-align: center;
+        font-size: 0.7em;
+    }
+
+    .text div h3{
+        text-align: center;
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    .text div p{
+        text-align: center;
+        font-size: 0.7em;
+    }
+
+    .text div a{
+        text-align: center;
+        font-size: 0.7em;
+    }
+
+    .text div{
+        margin-bottom: 15px;
+    }
+
+    .img-container1,
+    .img-container2,
+    .img-container3{
+        background-size: 90% 100%;
+        background-position: 90% 0;
+    }
+
+    .img-container1 img,
+    .img-container2 img,
+    .img-container3 img{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    nav img{
+        width: 150%;
+    }
+    .headline{
+        text-align: center;
+        font-size: 1.7em;
+    }
+
+    .try{
+        margin-top: 30px;
+        margin-right: 0px;
+    }
+
+    .virksomheder{
+        padding: 0;
+    }
+
+
+    .produktet{
+        grid-template-rows: 10% 10% 10% 1fr;
+    }
+
+    .prioritet{
+        grid-template-rows: 10% 10% 10% 1fr;
+
+    }
+    .img-container2{
+        padding-top: 10px;
+        background-size: 70% 100%;
+    }
+
+    .img-container2 img{
+        width: 100%;
+    }
+    .integration{
+        grid-template-rows: 10% 10% 10% 1fr 10px;
+    }
+
+    .img-container3{
+        background-size: 70% 100%;
+    }
+
+    .lær{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            "img"
+            "headline"
+            "lær"
+            "book"
+        ;
+
+    }
+
+    .lær img{
+        width: 90%;
+    }
+    .lær h1{
+        text-align: center;
+    }
+
+    .btn-lær{
+        margin-right: 0;
+        justify-self:center;
+    }
+    .btn-book{
+        justify-self:center;
+    }
+    
+    .top{
+        grid-template-columns: 1fr;
+        justify-items:left;
+    }
+}
+
